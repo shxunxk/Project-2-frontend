@@ -13,40 +13,40 @@ function NavList() {
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
+        
+        className="p-1 font-medium text-black"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+        <a href="#" className="flex items-center">
           Pages
         </a>
       </Typography>
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
+        
+        className="p-1 font-medium text-black"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+        <a href="#" className="flex items-center">
           Account
         </a>
       </Typography>
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
+        
+        className="p-1 font-medium text-black"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+        <a href="#" className="flex items-center">
           Blocks
         </a>
       </Typography>
       <Typography
         as="li"
         variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
+        
+        className="p-1 font-medium text-black"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
+        <a href="#" className="flex items-center">
           Docs
         </a>
       </Typography>
@@ -75,7 +75,7 @@ export function NavbarSimple() {
           as="a"
           href="#"
           variant="h6"
-          className="mr-4 cursor-pointer py-1.5"
+          className="mr-4 cursor-pointer py-1.5 text-black"
         >
           Material Tailwind
         </Typography>
