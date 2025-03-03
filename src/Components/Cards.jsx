@@ -10,11 +10,12 @@ import {
 
   export default function Cards() {
   return (
-    <Card className="w-full h-full shadow-lg rounded-lg">
+    <Link to='/title'>
+      <Card className="w-full h-full shadow-lg rounded-lg">
       {/* Image */}
       <CardHeader shadow={false} floated={false} className="h-40">
         <img
-          src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGV8fHx8&auto=format&fit=crop&w=927&q=80"
+          src="https://imgs.search.brave.com/KRqkY-t3DBrvTz_6SX1iyF3EBPn5xsDuK56x-jshXFE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcm9k/dWN0aW9uLW1lZGlh/LnBhcGVyc3dpdGhj/b2RlLmNvbS9kYXRh/c2V0cy9JbWFnZU5l/dC0wMDAwMDAwMDA4/LWYyZTg3ZWRkX1kw/ZlQ1emcuanBn"
           alt="card-image"
           className="h-full w-full object-cover rounded-t-lg"
         />
@@ -24,31 +25,23 @@ import {
       <CardBody className="p-3">
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+            Dataset Title
           </Typography>
-          <Typography color="blue-gray" className="font-medium">
-            $95.00
-          </Typography>
+          {/* <Typography color="blue-gray" className="font-medium">
+            
+          </Typography> */}
         </div>
         <Typography
           variant="small"
           color="gray"
-          className="font-normal opacity-75 truncate max-w-xs"
+          className="font-normal opacity-75 truncate min-w-xs"
         >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
+          Description
         </Typography>
       </CardBody>
 
       {/* Footer */}
-      <CardFooter className="pt-0">
-        <Link
-          to="/1"
-          className="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
-        >
-          View Details
-        </Link>
-      </CardFooter>
     </Card>
+    </Link>
   );
 }

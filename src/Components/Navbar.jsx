@@ -13,37 +13,6 @@ function NavList() {
       <Typography
         as="li"
         variant="small"
-        
-        className="p-1 font-medium text-black"
-      >
-        <a href="#" className="flex items-center">
-          Pages
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        
-        className="p-1 font-medium text-black"
-      >
-        <a href="#" className="flex items-center">
-          Account
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        
-        className="p-1 font-medium text-black"
-      >
-        <a href="#" className="flex items-center">
-          Blocks
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        
         className="p-1 font-medium text-black"
       >
         <a href="#" className="flex items-center">
@@ -69,7 +38,7 @@ export function NavbarSimple() {
   }, []);
  
   return (
-    <Navbar className="mx-auto max-w-screen px-6 py-3">
+    <Navbar className="mx-auto max-w-screen px-6 py-3 rounded-none">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
@@ -77,7 +46,7 @@ export function NavbarSimple() {
           variant="h6"
           className="mr-4 cursor-pointer py-1.5 text-black"
         >
-          Material Tailwind
+          Title
         </Typography>
         <div className="hidden lg:block">
           <NavList />
