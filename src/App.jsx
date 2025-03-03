@@ -8,17 +8,17 @@ import Login from './Pages/Login';
 function App() {
   return (
     <Router>
-      <div className="flex h-screen gap-0.5">
+      {/* <div className="flex h-screen gap-0.5"> */}
         {/* Sidebar - Uncomment if needed */}
         {/* <div className="w-12 h-screen text-white shadow-lg">
           <Sidebar />
         </div> */}
         <div className="flex-1 overflow-auto">
-          <div>
-            <NavbarSimple />
+          <div className="fixed top-0 left-0 w-full z-10">
+          <NavbarSimple />
           </div>
           {/* Main Content - Takes Remaining Space */}
-          <div>
+          <div className='mt-20'>
             <Routes>
               <Route path="/" element={<Navigate to="/login" />} />
               <Route path="/login" element={<Login />} />
@@ -27,7 +27,7 @@ function App() {
             </Routes>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </Router>
   );
 }

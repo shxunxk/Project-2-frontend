@@ -22,7 +22,7 @@ function FileUpload() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center h-screen bg-white rounded-lg">
       <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
         <h2 className="mb-4 text-2xl font-semibold text-center">Upload File</h2>
         <input

@@ -13,7 +13,7 @@ function NavList() {
       <Typography
         as="li"
         variant="small"
-        className="p-1 font-medium text-black"
+        className="p-1 font-medium"
       >
         <a href="#" className="flex items-center">
           Docs
@@ -38,15 +38,15 @@ export function NavbarSimple() {
   }, []);
  
   return (
-    <Navbar className="mx-auto max-w-screen px-6 py-3 rounded-none">
+    <Navbar className="mx-auto max-w-screen px-6 py-3 rounded-t-sm bg-black text-white">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
-          variant="h6"
-          className="mr-4 cursor-pointer py-1.5 text-black"
+          variant="h5"
+          className="mr-4 cursor-pointer py-1.5"
         >
-          Title
+          Dataset Marketplace
         </Typography>
         <div className="hidden lg:block">
           <NavList />
