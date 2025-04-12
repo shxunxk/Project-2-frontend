@@ -2,8 +2,13 @@ import React from "react";
 import Cards from "../Components/Cards";
 import FileUpload from "../Components/UploadDoc";
 import SearchBar from "../Components/SearchBar";
+import Cookies from "js-cookie";
 
 export default function Home() {
+
+  let user = Cookies.get('user')
+  user = JSON.parse(user)
+  console.log("Username from cookie:", user);
   return (
     <div className="m-10 flex-row">
       <div className="my-10">

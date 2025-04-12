@@ -1,6 +1,13 @@
+import axios from "axios";
 import { useState } from "react";
+import Cookies from 'js-cookie';
 
 function FileUpload() {
+
+  
+let user = Cookies.get('user')
+user = JSON.parse(user)
+
   const [selectedFile, setSelectedFile] = useState(null);
   const [message, setMessage] = useState("");
 
@@ -8,17 +15,30 @@ function FileUpload() {
     setSelectedFile(event.target.files[0]);
   };
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (!selectedFile) {
       setMessage("Please select a file first.");
       return;
     }
 
     // Simulate file upload process
-    setTimeout(() => {
-      setMessage(`File ${selectedFile.name} uploaded successfully.`);
-      setSelectedFile(null);
-    }, 1000);
+    const formData = new FormData();
+    formData.append("pdfFile", selectedFile); // Attach actual file
+    formData.append("userId", user?.email); // Attach user ID
+
+    try {
+        const response = await axios.post("http://localhost:5000/pdfs/upload", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        });
+
+        console.log("File upload response:", response.data);
+        setMessage("File uploaded successfully!");
+    } catch (error) {
+      // Handle errors properly
+      console.error("File upload error:", error.response?.data || error.message);
+    }
   };
 
   return (
