@@ -1,4 +1,5 @@
 import React from "react";
+import Cookies from "js-cookie";
 import {
   Navbar,
   Collapse,
@@ -15,8 +16,8 @@ function NavList() {
         variant="small"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center">
-          Docs
+        <a href="../login" className="flex items-center" onClick={() => {Cookies.remove('user');}}>
+          Logout
         </a>
       </Typography>
     </ul>

@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import Cookies from 'js-cookie';
+import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({passUser}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [user, setUser] = useState("");
+  
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -23,10 +22,8 @@ function Login() {
   
       // Access user details from response
       const userDetails = response.data.user;
-      setUser(userDetails); // Update state with user details
       console.log("User Details:", userDetails); // Log user details for debugging
-      
-      Cookies.set('user', JSON.stringify(userDetails));
+      passUser(JSON.stringify(userDetails))
       navigate('/home');
     } catch (error) {
       // Handle errors properly

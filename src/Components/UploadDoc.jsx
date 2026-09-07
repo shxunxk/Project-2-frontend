@@ -4,12 +4,13 @@ import Cookies from 'js-cookie';
 
 function FileUpload() {
 
-  
 let user = Cookies.get('user')
 user = JSON.parse(user)
 
   const [selectedFile, setSelectedFile] = useState(null);
+  const [description, setDescription] = useState("");
   const [message, setMessage] = useState("");
+  const formData = new FormData();
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -21,13 +22,12 @@ user = JSON.parse(user)
       return;
     }
 
-    // Simulate file upload process
-    const formData = new FormData();
-    formData.append("pdfFile", selectedFile); // Attach actual file
-    formData.append("userId", user?.email); // Attach user ID
-
     try {
-        const response = await axios.post("http://localhost:5000/pdfs/upload", formData, {
+      formData.append("csvFile", selectedFile);
+      formData.append("userId", user?.email);
+      formData.append("description", description);
+
+      const response = await axios.post("http://localhost:5000/pdfs/upload", formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
@@ -36,7 +36,6 @@ user = JSON.parse(user)
         console.log("File upload response:", response.data);
         setMessage("File uploaded successfully!");
     } catch (error) {
-      // Handle errors properly
       console.error("File upload error:", error.response?.data || error.message);
     }
   };
@@ -47,7 +46,16 @@ user = JSON.parse(user)
         <h2 className="mb-4 text-2xl font-semibold text-center">Upload File</h2>
         <input
           type="file"
+          name="csvFile"
           onChange={handleFileChange}
+          className="mb-4 w-full border p-2 rounded-lg"
+        />
+        <textarea
+          value={description}
+          type="text"
+          placeholder="Description"
+          rows="4"
+          onChange={(e) => setDescription(e.target.value)}
           className="mb-4 w-full border p-2 rounded-lg"
         />
         <button

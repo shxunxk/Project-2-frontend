@@ -8,9 +8,9 @@ import {
   } from "@material-tailwind/react";
   import { Link } from "react-router-dom";
 
-  export default function Cards() {
+  export default function Cards({title, description, by}) {
   return (
-    <Link to='/title'>
+    <Link to={`../${title}`}>
       <Card className="w-full h-full shadow-lg rounded-lg">
       {/* Image */}
       <CardHeader shadow={false} floated={false} className="h-40">
@@ -23,9 +23,12 @@ import {
 
       {/* Body */}
       <CardBody className="p-3">
-        <div className="mb-2 flex items-center justify-between">
+        <div className="mb-2 flex-col items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Dataset Title
+            {title}
+          </Typography>
+          <Typography color="blue-gray" className="font-medium">
+            {by}
           </Typography>
           {/* <Typography color="blue-gray" className="font-medium">
             
@@ -36,7 +39,7 @@ import {
           color="gray"
           className="font-normal opacity-75 truncate min-w-xs"
         >
-          Description
+          {description}
         </Typography>
       </CardBody>
 
